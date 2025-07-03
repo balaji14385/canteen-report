@@ -191,6 +191,7 @@ app.post('/operation',async(req,res)=>{
 let fn=arr.join(" ")
    res.send(abc.replace('{{%data%}}',fn))
 })
-app.listen(4040, () => {
+const port = process.env.PORT || 4040
+app.listen(port, () => {
   console.log("server started");
 });
