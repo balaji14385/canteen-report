@@ -144,7 +144,7 @@ res.send(abc.replace('{{%data%}}',fn))
 app.get('/data',async(req,res)=>{
   var ddd
   try{
- ddd=await db.find().sort({SheetDate:1,CanteenName:1})
+ ddd=await db.find().sort({SheetDate:1})
  }
  catch(err)
  {
