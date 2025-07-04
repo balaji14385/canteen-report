@@ -6,6 +6,7 @@ var f=fs.readFileSync('./index.html','utf-8')
 var abc=fs.readFileSync('./content.html','utf-8')
 var demo = fs.readFileSync('./demo.html', 'utf-8');
 var fm = fs.readFileSync('./form.html', 'utf-8');
+var fd= fs.readFileSync('./control.html', 'utf-8');
 var db=require('./database.js');
 const { trusted } = require("mongoose");
 var app=express();
@@ -61,6 +62,9 @@ var ar=['Bapatla','Chilakaluripet Clock Tower Center',
 ]
 app.get('/',(req,res)=>{
     res.send(f)
+})
+app.get('/find',(req,res)=>{
+    res.send(fd)
 })
 app.get('/home',(req,res)=>{
   res.send(f)
