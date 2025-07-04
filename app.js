@@ -107,7 +107,7 @@ await db.insertMany(rrr)
     
 )
 qrt.push(ass)
-const allData = await db.find().sort({ SheetDate: 1, CanteenName: 1 });
+const allData = await db.find().sort({ SheetDate: 1});
     const excelData = allData.map(e => ({
       SheetDate: e.SheetDate,
       CanteenName: e.CanteenName,
