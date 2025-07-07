@@ -58,7 +58,22 @@ var ar=['Bapatla','Chilakaluripet Clock Tower Center',
   'Vijayawada RTC Work Shop',
   'Vijayawada Sai Baba Temple',
   'Vijayawada Singh Nagar',
-  'Vuyyuru'
+  'Vuyyuru',
+  'Bhimavaram At Bullock Cart Stand',
+  'Bhimavaram At RTC Bus Stand',
+  'Bhimavaram R&B Department',
+  'Eluru At SBI',
+  'Eluru Rice Millers Association',
+  'Eluru RR Peta',
+  'Eluru Tangellamudi',
+  'Jangareddy Gudem',
+  'Narasapuram',
+  'Nidadavole',
+  'Palakollu',
+  'Tanuku',
+  'Tadepalligudem At M.R.O Office 8Th Ward',
+  'Tadepalligudem Auto Stand Center Near The Municipal Office',
+  'Tadepalligudem BR Market 14Th Ward'
 ]
 app.get('/',(req,res)=>{
     res.send(f)
