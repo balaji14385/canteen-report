@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main {
+            border: 1px solid black;
+            border-radius: 14px;
+            width: 300px;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color:blue;
+        }
+
+        @media(max-width:500px) {
+            .main {
+                border: 1px solid black;
+                border-radius: 14px;
+                width: fit-content;
+                padding: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <a href="https://canteen-report.onrender.com/data"><h3>All The Data</h3></a>
-    <a href="https://canteen-report.onrender.com/form"><h3>Particular Data</h3></a>
-    <a href="https://canteen-report.onrender.com/download"><h3>Download Excel File</h3></a>
+    <div class="main">
+        <div class="box">
+            <a href="https://canteen-report.onrender.com/data">
+                <h3>All The Data</h3>
+            </a>
+            <a href="https://canteen-report.onrender.com/form">
+                <h3>Particular Data</h3>
+            </a>
+            <a href="https://canteen-report.onrender.com/download">
+                <h3>Download Excel File</h3>
+            </a>
+        </div>
+
+    </div>
 </body>
+</script>
+
 </html>
