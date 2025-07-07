@@ -195,11 +195,34 @@ app.post('/operation',async(req,res)=>{
 let fn=arr.join(" ")
    res.send(abc.replace('{{%data%}}',fn))
 })
-app.get('/download',(req,res)=>
-{
-  const file='./canteen_data.xlsx'
-  res.download(file)
-})
+app.get('/download', async (req, res) => {
+  try {
+    const allData = await db.find().sort({ SheetDate: 1 });
+
+    const excelData = allData.map(e => ({
+      SheetDate: e.SheetDate,
+      CanteenName: e.CanteenName,
+      Breakfast: e.Breakfast,
+      Lunch: e.Lunch,
+      Dinner: e.Dinner,
+      NoOfTokens: e.NoOfTokens,
+      TotalAmount: e.TotalAmount
+    }));
+
+    const ws = xs.utils.json_to_sheet(excelData);
+    const wb = xs.utils.book_new();
+    xs.utils.book_append_sheet(wb, ws, "CanteenData");
+
+    const buffer = xs.write(wb, { bookType: 'xlsx', type: 'buffer' });
+
+    res.setHeader("Content-Disposition", "attachment; filename=canteen_data.xlsx");
+    res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    res.send(buffer);
+  } catch (err) {
+    console.error("Download error:", err);
+    res.status(500).send("Could not generate file");
+  }
+});
 const port = process.env.PORT || 4040
 app.listen(port, () => {
   console.log("server started");
