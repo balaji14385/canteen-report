@@ -145,6 +145,11 @@ app.get('/data',async(req,res)=>{
   var ddd
   try{
  ddd=await db.find().sort({SheetDate:1})
+  ddd.sort((a, b) => {
+      const indexA = ar.indexOf(a.CanteenName);
+      const indexB = ar.indexOf(b.CanteenName);
+      return indexA - indexB;
+    });
  }
  catch(err)
  {
