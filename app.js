@@ -142,15 +142,15 @@ res.send(abc.replace('{{%data%}}',fn))
 
 })
 app.get('/data',async(req,res)=>{
-  var ddd
+  var dddd
   try{
- ddd=await db.find().sort({SheetDate:1,CanteenName:1})
+ dddd=await db.find().sort({SheetDate:1,CanteenName:1})
  }
  catch(err)
  {
   res.send(err)
  }
-  var arr = ddd.map((e) => {
+  var arr = dddd.map((e) => {
    return demo
     .replace("{{%sd%}}", e.SheetDate || '0')
     .replace("{{%CanteenName%}}", e.CanteenName || '0')
