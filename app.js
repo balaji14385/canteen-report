@@ -195,11 +195,11 @@ app.post('/operation',async(req,res)=>{
 let fn=arr.join(" ")
    res.send(abc.replace('{{%data%}}',fn))
 })
-app.get('/download',(req,res)
+app.get('/download',(req,res)=>
 {
   const file='./canteen_data.xlsx'
   res.download(file)
-}
+})
 const port = process.env.PORT || 4040
 app.listen(port, () => {
   console.log("server started");
