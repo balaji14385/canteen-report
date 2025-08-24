@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const con="mongodb+srv://balaji:harekrishna666$$$@project.caa1tsj.mongodb.net/sweet?retryWrites=true&w=majority&appName=project"
-mongoose.connect(con)
+mongoose.connect(con1)
 const userSchema = new mongoose.Schema({
   SheetDate:{
     type:String,
@@ -31,4 +31,5 @@ const userSchema = new mongoose.Schema({
     default:0
   }
 });
+
 module.exports = mongoose.model('canteen', userSchema);
